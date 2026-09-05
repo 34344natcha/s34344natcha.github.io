@@ -2,160 +2,759 @@
 <html lang="th">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>แฟ้มสะสมงานของผม</title>
+    <title>แฟ้มสะสมผลงาน | นายณัฏชา แก้วพิลา</title>
 
     <style>
-        body {
-            font-family: sans-serif;
-            background-color: #CC0000;
-            text-align: center;
-            padding: 30px;
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffe6e6, #fff5f5);
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* เมนู */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #cc0000;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: gold;
+        }
+
+        /* กล่องหลัก */
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 900px;
+            margin: auto;
+            padding: 25px;
         }
 
-        .project-card {
-            background: salmon;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: left;
+        .card {
+            background: white;
+            margin: 30px 0;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
         }
 
-        .btn {
-            display: inline-block;
-            background: #CC6633;
+        /* หน้าแรก */
+
+        .cover {
+            text-align: center;
+            padding: 60px 30px;
+            background: linear-gradient(135deg, #cc0000, #ff6666);
+            color: white;
+            border-radius: 25px;
+            margin-bottom: 30px;
+        }
+
+        .cover h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cover h2 {
             color: gold;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
         }
 
-        /* ช่องทางติดต่อ */
+        /* หัวข้อ */
+
+        h2 {
+            color: #cc0000;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            color: #990000;
+        }
+
+        /* คำนำ */
+
+        .preface {
+            text-align: justify;
+        }
+
+        .signature {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        /* About Me */
+
+        .profile {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 230px;
+            height: 290px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 6px solid #cc0000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin: 20px auto;
+        }
+
+        .profile-info {
+            text-align: left;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .profile-info p {
+            background: #fff0f0;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        /* ติดต่อ */
 
         .contact {
-            background: white;
-            padding: 25px;
-            margin: 30px 0;
-            border-radius: 15px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            margin-top: 25px;
         }
 
-        .contact h2 {
-            color: #CC0000;
-            margin-bottom: 20px;
-        }
-
-        .contact-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #fff0ed;
+        .contact a {
+            display: block;
+            background: #fff0f0;
             color: #333;
-            padding: 13px 18px;
-            margin: 12px 0;
-            border-radius: 10px;
             text-decoration: none;
+            padding: 13px 18px;
+            margin: 10px 0;
+            border-radius: 10px;
+            transition: 0.3s;
         }
 
-        .contact-item:hover {
-            background: #ffd6ce;
+        .contact a:hover {
+            background: #ffd0d0;
+            transform: translateX(5px);
         }
 
-        .contact-item span {
-            color: #CC0000;
+        /* มหาวิทยาลัย */
+
+        .university {
+            text-align: center;
+            background: #fff4f4;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .reason {
+            text-align: justify;
+        }
+
+        .goal {
+            background: #ffe6e6;
+            padding: 20px;
+            border-left: 6px solid #cc0000;
+            border-radius: 10px;
+        }
+
+        /* ผลงาน */
+
+        .project {
+            background: #fff5f5;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+            border-left: 6px solid #cc0000;
+        }
+
+        .award {
+            display: inline-block;
+            background: #fff1a8;
+            color: #7a5a00;
+            padding: 10px 18px;
+            border-radius: 10px;
             font-weight: bold;
+            margin: 10px 0 20px;
+        }
+
+        /* รูปผลงาน */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        .skill {
+            background: white;
+            padding: 18px;
+            border-radius: 12px;
+        }
+
+        /* อิโมจิ */
+
+        .emoji {
+            text-align: center;
+            font-size: 35px;
+            line-height: 2;
+            letter-spacing: 8px;
+        }
+
+        /* ขอบคุณ */
+
+        .thanks {
+            text-align: center;
+        }
+
+        .thanks .big {
+            font-size: 35px;
+            margin: 20px 0;
+        }
+
+        /* ปุ่มกลับ */
+
+        .back {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .back a {
+            display: inline-block;
+            background: #cc6633;
+            color: gold;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .back a:hover {
+            background: #993300;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            background: #cc0000;
+            color: white;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        /* มือถือ */
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 15px;
+            }
+
+            .cover {
+                padding: 40px 20px;
+            }
+
+            .cover h1 {
+                font-size: 28px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 3px 5px;
+                font-size: 14px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery img {
+                height: 250px;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 260px;
+            }
+
         }
 
     </style>
 
 </head>
 
+
 <body>
+
+
+    <!-- เมนู -->
+
+    <nav>
+
+        <a href="#home">หน้าแรก</a>
+
+        <a href="#preface">คำนำ</a>
+
+        <a href="#about">About Me</a>
+
+        <a href="#university">มหาวิทยาลัย</a>
+
+        <a href="#works">ผลงาน</a>
+
+        <a href="#contact">ติดต่อ</a>
+
+        <a href="#thanks">ขอบคุณ</a>
+
+    </nav>
+
 
     <div class="container">
 
-        <h1>แฟ้มสะสมงาน (Portfolio)</h1>
+
+        <!-- หน้าแรก -->
+
+        <section class="cover" id="home">
+
+            <h1>
+                ✨ แฟ้มสะสมผลงาน (Portfolio) ✨
+            </h1>
+
+            <h2>
+                💫 นายณัฏชา แก้วพิลา 💫
+            </h2>
+
+            <p>
+                ยินดีต้อนรับเข้าสู่แฟ้มสะสมผลงานของผม
+            </p>
+
+        </section>
+
+
+        <!-- คำนำ -->
+
+        <section class="card preface" id="preface">
+
+            <h2>
+                📖 คำนำ
+            </h2>
+
+            <p>
+                แฟ้มสะสมผลงาน (Portfolio) ฉบับนี้จัดทำขึ้นเพื่อรวบรวม
+                ประวัติส่วนตัว ประวัติการศึกษา ผลงาน โครงงาน
+                และกิจกรรมต่าง ๆ ที่แสดงถึงความสามารถ
+                ความสนใจ และความตั้งใจของข้าพเจ้า
+            </p>
+
+            <p>
+                ข้าพเจ้าหวังเป็นอย่างยิ่งว่าแฟ้มสะสมผลงานเล่มนี้
+                จะช่วยให้ผู้อ่านได้รู้จักตัวตน ความสามารถ
+                และเป้าหมายในการศึกษาต่อของข้าพเจ้ามากยิ่งขึ้น
+                และเป็นส่วนหนึ่งที่แสดงถึงความมุ่งมั่น
+                ในการพัฒนาตนเองเพื่อก้าวไปสู่ความสำเร็จในอนาคต
+            </p>
+
+            <p class="signature">
+                นายณัฏชา แก้วพิลา
+            </p>
+
+        </section>
+
+
+        <!-- About Me -->
+
+        <section class="card profile" id="about">
+
+            <h2>
+                👩🏻‍🎓 About Me
+            </h2>
+
+
+            <img
+                src="https://34601sirilak.github.io/45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png"
+                alt="รูปโปรไฟล์"
+                class="profile-image"
+            >
+
+
+            <div class="profile-info">
+
+                <p>
+                    <strong>ชื่อ-สกุล :</strong>
+                    นายณัฏชา แก้วพิลา
+                </p>
+
+                <p>
+                    <strong>ชื่อเล่น :</strong>
+                    โซดา
+                </p>
+
+                <p>
+                    <strong>วัน/เดือน/ปีเกิด :</strong>
+                    29 ธันวาคม พ.ศ.2551
+                </p>
+
+                <p>
+                    <strong>อายุ :</strong>
+                    17 ปี
+                </p>
+
+                <p>
+                    <strong>แผนการเรียน :</strong>
+                    เตรียมวิศวกรรมศาสตร์
+                </p>
+
+            </div>
+
+
+            <!-- ช่องทางติดต่อ -->
+
+            <div class="contact" id="contact">
+
+                <h3>
+                    📩 ช่องทางการติดต่อ 📩
+                </h3>
+
+                <a href="tel:0979866547">
+                    ☎️ เบอร์โทรศัพท์ :
+                    097-986-6547
+                </a>
+
+                <a href="https://www.facebook.com/" target="_blank">
+                    📨 FACEBOOK :
+                    Cxllme Ahtee
+                </a>
+
+                <a href="mailto:natchakeawphila@gmail.com">
+                    📧 GMail :
+                    natchakeawphila@gmail.com
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- มหาวิทยาลัย -->
+
+        <section class="card" id="university">
+
+            <h2>
+                🎓 มหาวิทยาลัยที่ฉันสนใจอยากจะเข้าศึกษาต่อ
+            </h2>
+
+
+            <div class="university">
+
+                <h3>
+                    🌱 มหาวิทยาลัยเกษตรศาสตร์ บางเขน 🌱
+                </h3>
+
+                <p>
+                    <strong>คณะบิหารธุรกิจ</strong>
+                </p>
+
+                <p>
+                    สาขาการตลาด
+                </p>
+
+            </div>
+
+
+            <h3>
+                💙 เหตุผลที่ผมสนใจ 💙
+            </h3>
+
+
+            <div class="reason">
+
+                <p>
+                    ผมมีความสนใจในวิชาบริหารการตลาด
+                    เพราะเป็นวิชาที่ทำให้ได้เรียนรู้
+                    และค้นหาการตลาดโลก
+                    อีกทั้งยังชอบการสังเกต วิเคราะห์ วางแผน
+                    เพราะทำให้ได้รู้รายละเอียดเล็กๆน้อยที่เราได้มองผ่าน
+                    ได้สังเกตผล และเรียนรู้จากประสบการณ์
+                </p>
+
+                <p>
+                    นอกจากนี้ ผมยังชอบ
+                    การแก้ปัญหา เพราะทำให้ได้ฝึกคิด
+                    อย่างเป็นระบบ ใช้เหตุผล
+                    และค้นหาวิธีแก้ไขปัญหาอย่างเหมาะสม
+                </p>
+
+                <p>
+                    ฉันจึงมีความตั้งใจที่จะศึกษาต่อใน
+                    <strong>
+                        คณะบริหารธุรกิจ
+                        สาขาการตลาด
+                    </strong>
+                    เพื่อพัฒนาความรู้และทักษะความรู้รอบตัว
+                    รวมถึงเรียนรู้การถ่ายทอดความรู้
+                    ให้ผู้อื่นเข้าใจได้ง่าย
+                    และนำความรู้ไปต่อยอดในอนาคต
+                </p>
+
+            </div>
+
+
+            <h3>
+                🎓 เป้าหมายของผม
+            </h3>
+
+
+            <div class="goal">
+
+                <p>
+                    ตั้งใจเรียน พัฒนาทักษะด้านบริหารธุกิจ
+                    ฝึกการคิดวิเคราะห์ วางแผน
+                    และการแก้ปัญหา
+                    เพื่อก้าวไปสู่เป้าหมายในการศึกษาต่อ
+                    และเติบโตเป็นผู้ประกอบการ / เจ้าของธุรกิจ (Entrepreneur)
+                </p>
+
+            </div>
+
+        </section>
+
+
+       <!-- ผลงานและกิจกรรม -->
+<section class="portfolio">
+
+    <h2>🏆 ผลงานและกิจกรรม 🏆</h2>
+
+    <!-- กิจกรรมที่ 1 -->
+    <div class="activity-card">
+
+        <h3>🏀 การแข่งขัน Basketball Chonburi Open 2026</h3>
 
         <p>
-            นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจครับ
+            เข้าร่วมการแข่งขันบาสเกตบอล Basketball Chonburi Open 2026
+            รุ่นเยาวชนชายอายุไม่เกิน 18 ปี
         </p>
 
-        <!-- ผลงานที่ 1 -->
+        <h4>🥈 ผลการแข่งขัน</h4>
 
-        <div class="project-card">
+        <p>
+            ได้รับรางวัลรองชนะเลิศอันดับ 2
+        </p>
 
-            <h3>
-                1. แข่งบาสเกตบอลได้ที่3
-            </h3>
+        <div class="activity-images">
+
+            <img src="basketball1.jpg" alt="การแข่งขันบาสเกตบอล">
+            <img src="basketball2.jpg" alt="ทีมบาสเกตบอล">
+
+        </div>
+
+        <h4>✨ ทักษะที่ได้รับ</h4>
+
+        <p>
+            ได้พัฒนาทักษะการทำงานเป็นทีม การวางแผน การสื่อสาร
+            การแก้ไขปัญหาเฉพาะหน้า และการมีความรับผิดชอบต่อหน้าที่
+        </p>
+
+    </div>
+
+
+    <!-- กิจกรรมที่ 2 -->
+    <div class="activity-card">
+
+        <h3>🏀 การแข่งขันบาสเกตบอล 3x3 </h3>
+
+        <p>
+            เข้าร่วมการแข่งขันบาสเกตบอล 3x3
+            ได้ฝึกทักษะการเล่นกีฬาและการทำงานร่วมกับสมาชิกในทีม
+        </p>
+
+        <div class="activity-images">
+
+            <img src="basketball3.jpg" alt="การแข่งขันบาสเกตบอล 3x3">
+            <img src="basketball4.jpg" alt="ทีมบาสเกตบอล 3x3">
+
+        </div>
+
+        <h4>✨ สิ่งที่ได้รับ</h4>
+
+        <p>
+            ได้ฝึกการตัดสินใจอย่างรวดเร็ว การสื่อสารกับเพื่อนร่วมทีม
+            รวมถึงการมีน้ำใจนักกีฬาและการทำงานร่วมกับผู้อื่น
+        </p>
+
+    </div>
+
+
+    <!-- กิจกรรมที่ 3 -->
+    <div class="activity-card">
+
+        <h3>🏆 การเข้าร่วมการแข่งขันบาสเกตบอล</h3>
+
+        <p>
+            เข้าร่วมการแข่งขันบาสเกตบอลและฝึกฝนทักษะด้านกีฬา
+            ทั้งการเลี้ยงบอล การส่งบอล การยิงประตู และการเล่นเป็นทีม
+        </p>
+
+        <div class="activity-images">
+
+            <img src="basketball5.jpg" alt="การแข่งขันบาสเกตบอล">
+            <img src="basketball6.jpg" alt="รางวัลจากการแข่งขันบาสเกตบอล">
+
+        </div>
+
+        <h4>✨ สิ่งที่ได้รับ</h4>
+
+        <p>
+            ได้เรียนรู้ความสำคัญของความพยายาม ความมีวินัย
+            ความอดทน และการทำงานร่วมกับผู้อื่น
+        </p>
+
+    </div>
+
+
+    <!-- กิจกรรมที่ 4 -->
+    <div class="activity-card">
+
+        <h3>🥉 การแข่งขันและกิจกรรมด้านกีฬา</h3>
+
+        <p>
+            เข้าร่วมการแข่งขันบาสเกตบอลและกิจกรรมด้านกีฬา
+            พร้อมได้รับประสบการณ์จากการทำงานร่วมกับทีม
+        </p>
+
+        <div class="activity-images">
+
+            <img src="basketball7.jpg" alt="การแข่งขันและรางวัล">
+            <img src="basketball8.jpg" alt="ทีมและกิจกรรมการแข่งขัน">
+
+        </div>
+
+        <h4>✨ สิ่งที่ได้รับ</h4>
+
+        <p>
+            ได้รับประสบการณ์ในการแข่งขัน ฝึกความรับผิดชอบ
+            การทำงานเป็นทีม และการมีน้ำใจนักกีฬา
+        </p>
+
+    </div>
+
+</section>
+
+
+        <!-- อิโมจิ -->
+
+        <div class="emoji">
+
+            📚 ✏️ 🔬 🧪 ⭐ 💙 🍎
+            👩🏻‍🏫 📚 👩🏻‍🎓 📖
+
+            <br>
+
+            คุณครู 👩🏻‍🏫
+
+            <br>
+
+            นักเรียน 👩🏻‍🎓
+
+            <br>
+
+            ✨ 💙 ✨
+
+        </div>
+
+
+        <!-- ขอบคุณ -->
+
+        <section class="card thanks" id="thanks">
+
+            <h2>
+                💙 ขอบคุณ 💙
+            </h2>
 
             <p>
-                รายละเอียดชิ้นงาน :
-                เขียนอธิบายสั้น ๆ ว่าทำอะไร
-                ได้เรียนรู้อะไรจากงานนี้บ้าง
+                ขอบคุณที่รับชมผลงานของฉันนะคะ 💙
             </p>
-
-        </div>
-
-        <!-- ผลงานที่ 2 -->
-
-        <div class="project-card">
-
-            <h3>
-                2. กิจกรรม/เกียรติบัตรที่ได้รับ
-            </h3>
 
             <p>
-                รายละเอียดชิ้นงาน :
-                เข้าร่วมการประกวด
-                หรือกิจกรรมของโรงเรียน
+                หวังว่าทุกคนจะชื่นชอบ
+                แฟ้มสะสมผลงานนี้นะคะ ✨
             </p>
 
-        </div>
+            <p>
+                ด้วยความขอบคุณจากใจ 💐
+            </p>
 
-        <!-- ช่องทางติดต่อ -->
+            <div class="big">
+                🌷 📚 🔬 🌷
+            </div>
 
-        <div class="contact">
+            <strong>
+                นางสาว สิริลักษณ์ ผาดผ่อง
+            </strong>
 
-            <h2>📞 ช่องทางติดต่อ</h2>
+        </section>
 
-            <a href="tel:0979866547" class="contact-item">
-                📱 โทรศัพท์
-                <span>097-986-6547</span>
-            </a>
-
-            <a href="mailto:natchakeawphila@gmail.com" class="contact-item">
-                📧 Email
-                <span>natchakeawphila@gmail.com</span>
-            </a>
-
-            <a href="https://www.facebook.com/" target="_blank" class="contact-item">
-                📘 Facebook
-                <span>Cxllme Ahtee</span>
-            </a>
-
-            <a href="https://www.instagram.com/" target="_blank" class="contact-item">
-                📸 Instagram
-                <span>https://www.instagram.com/ztxeemc/</span>
-            </a>
-
-        </div>
 
         <!-- ปุ่มกลับหน้าแรก -->
 
-        <a href="index.html" class="btn">
-            กลับหน้าแรก
-        </a>
+        <div class="back">
+
+            <a href="index.html">
+                🏠 กลับหน้าแรก
+            </a>
+
+        </div>
+
 
     </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        ✨ Sirilak Portfolio ✨
+
+        <br>
+
+        แฟ้มสะสมผลงานของ นางสาวสิริลักษณ์ ผาดผ่อง
+
+    </footer>
+
 
 </body>
 
