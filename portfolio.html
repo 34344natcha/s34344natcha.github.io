@@ -25,7 +25,7 @@
             padding: 20px;
             margin: 20px 0;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             text-align: left;
         }
 
@@ -38,48 +38,45 @@
             border-radius: 5px;
             margin-top: 20px;
         }
-    </style>.contact {
-background: white;
-padding: 25px;
-margin: 30px 0;
-border-radius: 15px;
-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
 
-.contact h2 {
-color: #CC0000;
-margin-bottom: 20px;
-}
+        /* ช่องทางติดต่อ */
 
-.contact-item {
-display: flex;
-justify-content: space-between;
-align-items: center;
-background: #fff0ed;
-color: #333;
-padding: 13px 18px;
-margin: 12px 0;
-border-radius: 10px;
-text-decoration: none;
-transition: 0.3s;
-}
+        .contact {
+            background: white;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
 
-.contact-item {
-background: #ffd6ce;
-transform: translateX(5px);
-}
+        .contact h2 {
+            color: #CC0000;
+            margin-bottom: 20px;
+        }
 
-.contact-item span {
-color: #CC0000;
-font-weight: bold;
-}
+        .contact-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff0ed;
+            color: #333;
+            padding: 13px 18px;
+            margin: 12px 0;
+            border-radius: 10px;
+            text-decoration: none;
+        }
 
-@media (max-width: 600px) {
-.contact-item {
-flex-direction: column;
-gap: 5px;
-}
-}
+        .contact-item:hover {
+            background: #ffd6ce;
+        }
+
+        .contact-item span {
+            color: #CC0000;
+            font-weight: bold;
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -92,11 +89,12 @@ gap: 5px;
             นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจครับ
         </p>
 
-        <!-- กล่องผลงานที่ 1 -->
+        <!-- ผลงานที่ 1 -->
+
         <div class="project-card">
 
             <h3>
-                1. โครงงาน/ชิ้นงานวิทยาศาสตร์คำนวณ
+                1. แข่งบาสเกตบอลได้ที่3
             </h3>
 
             <p>
@@ -107,7 +105,8 @@ gap: 5px;
 
         </div>
 
-        <!-- กล่องผลงานที่ 2 -->
+        <!-- ผลงานที่ 2 -->
+
         <div class="project-card">
 
             <h3>
@@ -122,7 +121,36 @@ gap: 5px;
 
         </div>
 
+        <!-- ช่องทางติดต่อ -->
+
+        <div class="contact">
+
+            <h2>📞 ช่องทางติดต่อ</h2>
+
+            <a href="tel:0979866547" class="contact-item">
+                📱 โทรศัพท์
+                <span>097-986-6547</span>
+            </a>
+
+            <a href="mailto:natchakeawphila@gmail.com" class="contact-item">
+                📧 Email
+                <span>natchakeawphila@gmail.com</span>
+            </a>
+
+            <a href="https://www.facebook.com/" target="_blank" class="contact-item">
+                📘 Facebook
+                <span>Cxllme Ahtee</span>
+            </a>
+
+            <a href="https://www.instagram.com/" target="_blank" class="contact-item">
+                📸 Instagram
+                <span>https://www.instagram.com/ztxeemc/</span>
+            </a>
+
+        </div>
+
         <!-- ปุ่มกลับหน้าแรก -->
+
         <a href="index.html" class="btn">
             กลับหน้าแรก
         </a>
